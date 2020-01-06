@@ -1,0 +1,26 @@
+<h1>CREATE A PRODUCT</h1>
+<form action="/boutique_create" method="POST">
+<div class="form-group">
+  <label>Titre du produit</label>
+  <input type="text" name="titre" placeholder="Tire du produit" class="form-control">
+</div>
+<div class="form-group">
+  <label>prix</label>
+  <input type="number" name="prix" placeholder="Prix" class="form-control">
+</div>
+<div class="form-group">
+  <label>Description</label>
+  <textarea name="description" rows="8" cols="80"placeholder="Description optionnel" class="form-control" ></textarea>
+</div>
+<div class="form-group">
+  <label>Categories</label>
+  <select class="form-control" name="category">
+    <% category.forEach(function(category) {  %>
+    <option value="<%= category.category%>"><%= category.category%></option>
+    <% }); %>
+    <option value="Autre">Autre</option>
+  </select>
+</div>
+<button type="submit" class="btn btn-success"><i class="fas fa-plus"></i> Ajouter</button>
+<a href="/boutique" class="btn btn-info">back</a>
+</form>

@@ -1,0 +1,23 @@
+<h1>DETAIL D'UN BILLET <a href="/billet" class="btn btn-info">back</a></h1>
+<div class="card" style="margin-bottom:4%;">
+<div class="card-header">
+  <%= billet[0].titre %>
+</div>
+<div class="card-body">
+  <blockquote class="blockquote mb-0">
+    <p><%= billet[0].content %></p>
+    <footer class="blockquote-footer">Posted by <cite title="Source Title"><%= billet[0].owner %></cite></footer>
+  </blockquote>
+</div>
+</div>
+<h3>Commantaires :</h3>
+  <% comm.forEach(function(comm) {  %>
+    <ul class="list-group" style="margin-bottom:1%;">
+      <li class="list-group-item"><%= comm.commantaire %><cite style="float:right"title="Source Title">post by <strong><%= comm.post_by %></strong></cite></li>
+    </ul>
+  <% }); %>
+<form action="/commantaire" method="post">
+  <input type="hidden" name="id_billet" value="<%= billet[0]._id%>">
+  <input type="text" name="commantaire" style="margin-top:5%;">
+  <input type="submit" name="submit" value="poster">
+</form>

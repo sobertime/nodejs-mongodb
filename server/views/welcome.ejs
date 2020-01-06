@@ -1,0 +1,23 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body text-center">
+      <p>Register/Login</p>
+      <a href="/register" class="btn btn-primary btn-block mb-2">Register</a>
+      <a href="/login" class="btn btn-success btn-block">Login</a>
+    </div>
+  </div>
+</div>
+<h1>Les Blog</h1>
+<% billet.forEach(function(billet) {  %>
+  <div class="card" style="margin-bottom:4%;">
+  <div class="card-header">
+    <%= billet.titre %>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p style="width:200px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><%= billet.content %></p>
+      <footer class="blockquote-footer">Posted by <cite title="Source Title"><%= billet.owner %></cite></footer>
+    </blockquote>
+  </div>
+</div>
+<% }); %>

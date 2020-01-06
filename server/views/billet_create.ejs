@@ -1,0 +1,14 @@
+<h1>CREATE A BILLET</h1>
+<form action="/billet_create" method="POST">
+<input type='hidden' name="owner" value="<%= user.email%>"><br>
+<div class="form-group">
+  <label>Titre</label>
+  <input type="text" name="titre" placeholder="Tire du Blog" class="form-control" required>
+</div>
+<div class="form-group">
+  <label>Content</label>
+  <textarea name="content" rows="8" cols="80" placeholder="Blog contents" class="form-control" required></textarea>
+</div>
+<button type="submit" class="btn btn-success"><i class="fas fa-vote-yea"></i> Poster</button>
+<a href="/profil" class="btn btn-info">back</a>
+</form>

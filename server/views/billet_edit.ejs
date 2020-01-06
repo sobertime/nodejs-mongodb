@@ -1,0 +1,20 @@
+<% billet.forEach(function(billet) {  %>
+  <h1>Editer mon Blog  <a href="/billet/<%= billet.owner %>" class="btn btn-info">back</a></h1>
+  <div class="card" style="margin-bottom:4%;">
+  <div class="card-header">
+    <form class="" action="/billet/edit/<%= billet.owner %>" method="post">
+    <label>Titre</label>
+      <input type="hidden" name="id" value="<%= billet._id %>">
+      <input type="hidden" name="email" value="<%= billet.email %>">
+      <input type="text" name="titre" value="<%= billet.titre %>">
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <label>Content</label><br>
+      <textarea name="content" rows="8" cols="80"><%= billet.content %></textarea>
+    </blockquote>
+  </div>
+</div>
+<button type="submit" class="btn btn-success" style="float:right;">save</button>
+</form>
+<% }); %>

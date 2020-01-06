@@ -1,0 +1,17 @@
+<h1>Detail de ce produit :
+  <a href="/boutique" class="btn btn-info" style="float: right;margin-top:1%;">back</a>
+</h1>
+<div class="card text-center">
+  <div class="card-header">
+    Categorie : <strong><%= product[0].category %></strong>
+  </div>
+  <div class="card-body">
+    <h3 class="card-title"><%= product[0].titre %></h3>
+    <p class="card-text"><strong>Description: </strong><br><%= product[0].description %></p>
+    <a href="#" class="btn btn-primary"><%= product[0].prix %> €</a>
+  </div>
+</div>
+<form  action="/product/delete" method="post" style="margin-top:3%">
+  <input type="hidden" name="id" value="<%= product[0]._id%>">
+  <button style="float:right;background:red"type="submit" name="button" class="btn btn-danger">Supprimer l'article</button>
+</form>

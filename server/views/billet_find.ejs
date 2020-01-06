@@ -1,0 +1,14 @@
+<h1>result :<a href="/billet" class="btn btn-info" style="float:right;margin-top:1%;">back</a></h1>
+
+<% billet.forEach(function(billet) {  %>
+  <div class="card" style="margin-bottom:4%;">
+  <div class="card-header">
+    <a href="/billet/detail/<%= billet._id %>"><%= billet.titre %></a>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p style="width:200px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><%= billet.content %></p>
+    </blockquote>
+  </div>
+</div>
+<% }); %>

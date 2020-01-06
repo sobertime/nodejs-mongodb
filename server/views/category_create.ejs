@@ -1,0 +1,25 @@
+<h1>Create a new Category <a href="/boutique" class="btn btn-info">boutique</a></h1>
+<form action="/category_create" method="post">
+  <input type="text" name="category" placeholder="New Category">
+  <input type="submit" name="submit" value="Add">
+</form>
+<h2>Liste des Categories :</h2>
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"style="text-align:center;" ><h2>Categories</h2></th>
+    </tr>
+  </thead>
+  <tbody style="text-align:center;">
+  <% category.forEach(function(category) {  %>
+    <tr>
+      <form action="/category_delete" method="post">
+      <th scope="row"><%= category.category %>
+        <input type="hidden" name="category" value="<%= category.category%>">
+        <button style="float : right;color:red"type="submit" name="button"><i class="fas fa-times"></i></button>
+      </th>
+      </form>
+    </tr>
+  <% }); %>
+  </tbody>
+</table>

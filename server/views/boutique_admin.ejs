@@ -1,0 +1,19 @@
+ <h1>Les Produits : <a href="/profil" class="btn btn-info">profil</a>
+   <a href="/boutique_create" class="btn btn-success"><i class="far fa-plus-square"></i> Create a product</a>
+   <a href="/category_create" class="btn btn-success"><i class="far fa-plus-square"></i> Add a new category</a>
+ </h1>
+ <form action="/product/search" method="post">
+   <input type="text" name="product">
+   <button type="submit" name="button" class="btn btn-dark" > <i class="fas fa-search"></i></button>
+ </form>
+ <% boutique.forEach(function(boutique) {  %>
+ <div class="card" style="width: 18rem;display: inline-block;">
+   <div class="card-body">
+     <a href="/boutique/<%= boutique.id_product %>" style="color : black">
+       <h5 class="card-title"><%= boutique.titre%></h5>
+     </a>
+     <a href="#" class="btn btn-primary" style="margin-bottom:4%"><%= boutique.prix %> €</a>
+     <p>Categorie : <%= boutique.category %></p>
+   </div>
+ </div>
+ <% }); %>

@@ -1,0 +1,22 @@
+<h1>Mon Blog  <a href="/profil" class="btn btn-info">back</a></h1>
+<% billet.forEach(function(billet) {  %>
+  <div class="card" style="margin-bottom:4%;">
+  <div class="card-header">
+    <form class="" action="/billet/delete" method="post">
+    <%= billet.titre %>
+      <input type="hidden" name="id" value="<%= billet._id %>">
+      <input type="hidden" name="email" value="<%= billet.owner%>">
+      <button type="submit" class="btn btn-danger" style="background:red;float:right;">Delete</button>
+    </form>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p><%= billet.content %></p>
+    </blockquote>
+    <form class="" action="/billet/edit/<%= billet._id %>" method="get">
+      <input type='hidden' name="id" value="<%= billet._id %>">
+      <button type="submit" class="btn btn-success" style="float:right;">Editer</button>
+    </form>
+  </div>
+</div>
+<% }); %>

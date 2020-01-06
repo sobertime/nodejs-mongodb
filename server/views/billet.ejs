@@ -1,0 +1,19 @@
+<form action="/billet/find" method="post">
+  <input type="submit" name="submit" value="search" style="float : right; margin-top : 1%;">
+  <input type="search" name="search" value="" style="float : right; margin-top : 1%;">
+</form>
+
+<h1>Blog  <a href="/profil" class="btn btn-info">Profil</a></h1>
+<% billet.forEach(function(billet) {  %>
+  <div class="card" style="margin-bottom:4%;">
+  <div class="card-header">
+    <a href="/billet/detail/<%= billet._id %>"><%= billet.titre %></a>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p style="width:200px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><%= billet.content %></p>
+      <footer class="blockquote-footer">Posted by <cite title="Source Title"><%= billet.owner %></cite></footer>
+    </blockquote>
+  </div>
+</div>
+<% }); %>

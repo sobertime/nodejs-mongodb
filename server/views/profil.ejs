@@ -1,0 +1,25 @@
+<center>
+  <h4 style="margin-bottom:5%">Welcome <%= user.login %></h4>
+<table class="table table-hover table-dark" style="text-align:center;width:400px;">
+  <tbody>
+    <tr>
+      <th scope="row"><i class="fas fa-user"></i> User :  <%= user.login %></th>
+    </tr>
+    <tr>
+      <th scope="row"><i class="fas fa-user-shield"></i> Admin : <%= user.admin%></th>
+    </tr>
+    <tr>
+      <th scope="row"><i class="far fa-envelope"></i> Email : <%= user.email%></th>
+    </tr>
+  </tbody>
+</table>
+<a href="/billet_create" class="btn btn-success"><i class="far fa-paper-plane"></i> POSTER UN BILLET</a>
+<a href="/billet/<%= user.email %>" class="btn btn-primary"><i class="fas fa-blog"></i> Mes BLOG</a>
+<a href="/billet" class="btn btn-info"><i class="fas fa-blog"></i> LES BLOG</a>
+<a href="/boutique" class="btn btn-warning"><i class="fas fa-store"></i> Shop</a>
+<a href="/logout" class="btn btn-danger" style="background:#ff3333;"><i class="fas fa-sign-out-alt"></i> Logout</a><br><br>
+  <% if(user.admin === true){ %>
+<a href="/admin" class="btn btn-dark"><i class="fas fa-users-cog"></i> Gestion d'User</a>
+<% } else { %>
+  <% } %>
+</center>
